@@ -14,9 +14,17 @@ class Movie {
         $this -> genres = $genres;
     }
 
-    public function getMovieInfo(){
-        $implodedGenres = implode(", ", $this -> genres);
-        return "Titolo: {$this->title}, Regista: {$this->director}, Anno: {$this->year}, Generi: {$implodedGenres}";
+    public function genresToString() {
+        $genreNames = [];
+        foreach ($this->genres as $genre) {
+            $genreNames[] = $genre->name; 
+        }
+        $genresString = implode(", ", $genreNames);
+        return $genresString;
+    }
+
+    public function getMovieInfo() {
+        return "Titolo: {$this->title}, Regista: {$this->director}, Anno: {$this->year}, Generi: {$this->genresToString()}"; 
     }
 }
 
