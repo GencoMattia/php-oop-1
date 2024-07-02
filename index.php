@@ -3,15 +3,15 @@
 require_once __DIR__ . "/models/Movie.php";
 require_once __DIR__ . "/models/Genre.php";
 
-// Movies
-$newMovie1 = new Movie("Il Padrino", "Francis Ford Coppola", 1972, "Drammatico");
-$newMovie2 = new Movie("Pulp Fiction", "Quentin Tarantino", 1994, "Thriller");
-
 // Genres
-$drama = new Genre("Drammatico");
-$crime = new Genre("Crime");
-$thriller = new Genre("Thriller");
-$blackComedy = new Genre("Commedia Nera");
+$drama = new Genres("Drammatico");
+$crime = new Genres("Crime");
+$thriller = new Genres("Thriller");
+$darkComedy = new Genres("Commedia Nera");
+
+// Movies
+$newMovie1 = new Movie("Il Padrino", "Francis Ford Coppola", 1972, [$drama, $crime]);
+$newMovie2 = new Movie("Pulp Fiction", "Quentin Tarantino", 1994, [$thriller, $crime, $darkComedy]);
 
 ?>
 

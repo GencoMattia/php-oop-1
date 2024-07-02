@@ -1,23 +1,21 @@
 <?php
 
+require_once __DIR__ . "/Genre.php";
 class Movie {
     public $title;
     public $director;
     public $year;
-    public $genres = [];
+    public $genres;
 
     function __construct($title, $director, $year, $genres) {
         $this -> title = $title;
         $this -> director = $director;
         $this -> year = $year;
-
-        foreach($genres as $genre) {
-            $this -> genres [] = new Genre($genre);
-        };
+        $this -> genres = $genres;
     }
 
     public function getMovieInfo(){
-        return "Titolo: {$this->title}, Regista: {$this->director}, Anno: {$this->year}, Genere: {$this->genre}";
+        return "Titolo: {$this->title}, Regista: {$this->director}, Anno: {$this->year}, Generi: {$this->genres}";
     }
 }
 

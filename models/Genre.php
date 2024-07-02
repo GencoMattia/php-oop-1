@@ -1,6 +1,6 @@
 <?php 
 
-class Genre {
+class Genres {
     public $name;
 
     public function __construct($name){
