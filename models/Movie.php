@@ -15,7 +15,8 @@ class Movie {
     }
 
     public function getMovieInfo(){
-        return "Titolo: {$this->title}, Regista: {$this->director}, Anno: {$this->year}, Generi: {$this->genres}";
+        $implodedGenres = implode(", ", $this -> genres);
+        return "Titolo: {$this->title}, Regista: {$this->director}, Anno: {$this->year}, Generi: {$implodedGenres}";
     }
 }
 
