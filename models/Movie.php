@@ -4,13 +4,16 @@ class Movie {
     public $title;
     public $director;
     public $year;
-    public $genre;
+    public $genres = [];
 
-    function __construct($title, $director, $year, $genre) {
+    function __construct($title, $director, $year, $genres) {
         $this -> title = $title;
         $this -> director = $director;
         $this -> year = $year;
-        $this -> genre = $genre;
+
+        foreach($genres as $genre) {
+            $this -> genres [] = new Genre($genre);
+        };
     }
 
     public function getMovieInfo(){
